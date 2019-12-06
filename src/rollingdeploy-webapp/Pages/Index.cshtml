@@ -4,7 +4,17 @@
     ViewData["Title"] = "Home page";
 }
 
+@using Microsoft.Extensions.Options;
+@inject IOptions<AppSettings> Settings
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>If you are seeing this, then <strong>Congratulations!</strong> <br/> You've got the example application running. </p>
+    
+    @if(Settings.Value.AppVersion == "0.0.2") {
+        <p>v0.0.2 of the application comes with this text </p>
+    }
+    @if(Settings.Value.AppVersion == "0.0.3") {
+        <p>But don't miss out on v0.0.3 of the application which comes with this text! </p>
+    }
 </div>
