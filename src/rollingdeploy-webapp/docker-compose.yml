@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  web:
+    image: harrisonmeister/rolling-deploy-example:0.0.3
+    ports: 
+      - '5001:5001'
